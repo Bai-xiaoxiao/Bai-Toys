@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    .out {
+      display: flex;
+    }
+    .left {
+      width: 200px;
+      border-right: 1px solid #000;
+      background-color: pink;
+    }
+    .right {
+      flex: 1;
+      /* width: calc(100% - 200px); */
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+  <div class="out">
+    <div class="left inner">左边200px</div>
+    <div class="right inner">右边自适应</div>
+  </div>
+</body>
+</html>

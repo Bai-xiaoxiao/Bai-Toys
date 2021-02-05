@@ -1,0 +1,19 @@
+{
+  "name": "bai-toys",
+  "version": "0.1.0",
+  "description": "常用的一些小功能集成玩具仓库",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bai-xiaoxiao/Bai-Toys.git"
+  },
+  "author": "bxd",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bai-xiaoxiao/Bai-Toys/issues"
+  },
+  "homepage": "https://github.com/Bai-xiaoxiao/Bai-Toys#readme"
+}

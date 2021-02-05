@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    .box {
+      width: 100px;
+      height: 60px;
+      background-color: red;
+      transform-style: preserve-3d;
+      transition: transform 1s;
+    }
+    .box:hover {
+      transform: rotateX(90deg);
+    }
+    .box div {
+      height: 60px;
+    }
+    .front {
+      background-color: yellow;
+    }
+    .bottom {
+      background-color: blue;
+      transform: translateY(-30px) rotateX(-90deg);
+    }
+  </style>
+  <div class="box">
+    <div class="front">标题</div>
+    <div class="bottom">结果</div>
+  </div>
+</body>
+</html>

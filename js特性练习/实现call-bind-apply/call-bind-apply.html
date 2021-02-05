@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script src="./call-bind-apply.js"></script>
+  <script>
+    Function.prototype.myCall = function(obj) {
+      const args = [...arguments].slice(1);
+      obj.fn = this;
+      obj.fn(...args);
+      delete obj.fn;
+    }
+
+    Function.prototype.myApply = function (obj, args) {
+      this.myCall(obj, ...args);
+    }
+
+    Function.prototype.myBind = function (obj) {
+      obj.fn = this;
+      
+      // 使用闭包保存obj
+      return function () {
+        obj.fn(...arguments);
+      }
+    }
+
+    function say() {
+      console.log(`我是${this.name}`, ...arguments);
+    }
+
+    say.myCall({name: '帅哥'},1,2,3,4,5);
+    say.myApply({name: '帅哥2'}, [1,2,3,4,5]);
+    say.myBind({name: '帅哥3'})(1,2,3,4,5);
+  </script>
+</body>
+</html>

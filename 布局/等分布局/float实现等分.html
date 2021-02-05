@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    .out {
+      border: 1px solid red;
+      /* 清除浮动 */
+      overflow: hidden;
+    }
+    /* 第一种 */
+    .inner {
+      float: left;
+      background-color: pink;
+      height: 100px;
+      /* 如果要求三列之间有点间隔1 */
+      /* padding-left: 20px;
+      width: 33.3%;
+      background-clip: content-box; */
+
+      /* 要求间隔2 */
+      margin-left: 10px;
+      width: calc(33.3% - 10px);
+    }
+  </style>
+</head>
+<body>
+  <div class="out">
+    <div class="inner">111</div>
+    <div class="inner">222</div>
+    <div class="inner">333</div>
+  </div>
+</body>
+</html>
