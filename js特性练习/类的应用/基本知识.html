@@ -1,0 +1,61 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 这里的知识视频课：https://www.bilibili.com/video/BV1wy4y1D7JT?p=10&spm_id_from=pageDriver
+    class Person {
+      // 构造器
+      constructor(name, age) {
+        // 这里的this指向实例对象
+        this.name = name
+        this.age = age
+      }
+
+      // 一般方法
+      // 放在类的原型对象上。实例对象本身不存在这个属性，但是原型链上存在
+      speak() {
+        // 这里的this指向调用者
+        console.log(`我叫${this.name}，年龄${this.age}`);
+      }
+    }
+    const p1 = new Person('Tom-Jerry', 26);
+    console.log(p1);
+    p1.speak();
+
+    // 学生继承人的属性
+    class Student extends Person {
+      // 构造器可以不写默认使用父类构造器，如果写了就必须调用super方法，且super必须在最前面
+      // super标识调用父类的构造器，也可以穿参过去，相同的属性就不用再写一次
+      constructor(name, age, grade) {
+        super(name, age);
+        this.grade = grade
+      }
+      // speak() {
+      //   console.log(`我叫${this.name}，年龄${this.age}，年级${this.grade}`);
+      // }
+    }
+    const p2 = new Student('小明', 15, '一年级');
+    console.log(p2);
+    // p2的原型链指向student，student原型指向person，根据原型链网上查找所以他也有speak方法
+    // 如果student也写了speak方法，就会找到student，而不会再往上找了，所以会采用student的speak方法
+    // p2 instanceof Student
+    // true
+    // p2 instanceof Person
+    // true
+    p2.speak();
+
+    // 这里再说一下：实例对象自己会带有所有原型链上的父类的方法，而类的prototype上才有父类的方法
+    // console.log(p2.speak); // function
+    // console.log(p2.__proto__.speak); // function
+    // console.log(Student.speak); // undefined 不管student有没有自定义speak方法，speak都在他的prototy上
+    // console.log(Student.prototype.speak); // function
+  </script>
+</body>
+
+</html>
